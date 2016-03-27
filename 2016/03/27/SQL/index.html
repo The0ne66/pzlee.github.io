@@ -4,17 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>简介 | pzlee</title>
+    <title>SQL | pzlee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pzlee">
     
-    <meta name="description" content="关于我
-Pzlee
-兴趣爱好：足球、计算机、音乐…
-座右铭：脚踏实地，手创未来。
-
-我想成为一名优秀的程序员（Hacker）,此博客将会记录我在这条道路上的点点滴滴。无论结果如何，我都会努力的做好当下的事情（GTD）,让未来的自己不会感到后悔。——《给未来的自己》——杨宗纬">
+    <meta name="description" content="SQL——结构化查询语句SQL是一种专门用来与数据库沟通的语言，而常见的数据库有：SQL server、Mysql、Oracle等。数据库基础知识参见：SQL必知必会–Ben Forta
+我们都知道动态网页离不来数据库的支持，在应用数据库的时候难免会产生一些信息安全的问题。
+SQL注入漏洞：通过特殊">
     
     
     
@@ -73,15 +70,15 @@ Pzlee
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/21/简介/" title="简介" itemprop="url">简介</a>
+      <a href="/2016/03/27/SQL/" title="SQL" itemprop="url">SQL</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://pzlee.github.io" title="pzlee">pzlee</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-21T14:19:01.000Z" itemprop="datePublished">2016-03-21</time>
-    更新日期:<time datetime="2016-03-21T14:40:07.071Z" itemprop="dateModified">2016-03-21</time>
+    <time datetime="2016-03-27T04:02:03.000Z" itemprop="datePublished">2016-03-27</time>
+    更新日期:<time datetime="2016-03-27T04:39:12.397Z" itemprop="dateModified">2016-03-27</time>
     
   </p>
 </header>
@@ -90,35 +87,60 @@ Pzlee
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于我"><span class="toc-number">1.</span> <span class="toc-text">关于我</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL——结构化查询语句"><span class="toc-number">1.</span> <span class="toc-text">SQL——结构化查询语句</span></a></li></ol>
 		</div>
 		
-		<h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><ul>
-<li>Pzlee</li>
-<li>兴趣爱好：足球、计算机、音乐…</li>
-<li>座右铭：脚踏实地，手创未来。</li>
-</ul>
-<p><em>我想成为一名优秀的程序员（Hacker）,此博客将会记录我在这条道路上的点点滴滴。无论结果如何，我都会努力的做好当下的事情（GTD）,让未来的自己不会感到后悔。——《给未来的自己》——杨宗纬</em></p>
+		<h1 id="SQL——结构化查询语句"><a href="#SQL——结构化查询语句" class="headerlink" title="SQL——结构化查询语句"></a>SQL——结构化查询语句</h1><p>SQL是一种专门用来与数据库沟通的语言，而常见的数据库有：SQL server、Mysql、Oracle等。<br>数据库基础知识参见：SQL必知必会–Ben Forta</p>
+<p>我们都知道动态网页离不来数据库的支持，在应用数据库的时候难免会产生一些信息安全的问题。</p>
+<p>SQL注入漏洞：通过特殊的SQL，去破解数据库。</p>
+<p>分类：</p>
+<ol>
+<li>数字型注入</li>
+<li>字符型注入</li>
+<li>(其他分类可归为上述两类)</li>
+</ol>
+<p>利用方式：</p>
+<ol>
+<li>数据查询</li>
+<li>读写文件</li>
+<li>执行命令</li>
+</ol>
+<p>常见工具：</p>
+<ol>
+<li>SQLMap</li>
+<li>Havij</li>
+<li>Pangolin</li>
+<li>（还有其他的工具这里就不一一列举，一般SQL注入已工具为主，手工为副。）</li>
+</ol>
+<p>SQL防范：</p>
+<ol>
+<li>严格的数据类型</li>
+<li>特殊字符转义</li>
+<li>使用预编译语句</li>
+<li>框架技术</li>
+<li>存储过程</li>
+</ol>
+<p><em>今天简单地了解SQL注入漏洞的原理，后续会深入的理解和应用SQL注入漏洞。</em><br><em>如果有好的实战例子我会与大家进行分享，加油！</em></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/about/">about</a>
+  <span></span> <a href="/tags/SQL/">SQL</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/diary/">diary</a>
+  <a class="article-category-link" href="/categories/Web安全/">Web安全</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://pzlee.github.io/2016/03/21/简介/" data-title="简介 | pzlee" data-tsina="null" class="share clearfix">
+  <div data-url="http://pzlee.github.io/2016/03/27/SQL/" data-title="SQL | pzlee" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -127,19 +149,11 @@ Pzlee
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/27/SQL/" title="SQL">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  SQL</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/21/hello-world/"  title="Hello World">
+<a href="/2016/03/21/简介/"  title="简介">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>简介
 </span>
 </a>
 </div>
@@ -158,7 +172,7 @@ Pzlee
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于我"><span class="toc-number">1.</span> <span class="toc-text">关于我</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL——结构化查询语句"><span class="toc-number">1.</span> <span class="toc-text">SQL——结构化查询语句</span></a></li></ol>
   </div>
 
 <div id="asidepart">
