@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>SQL | Lee&#39;s Blog</title>
+    <title>上传漏洞 | Lee&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pzlee">
     
-    <meta name="description" content="SQL——结构化查询语句SQL是一种专门用来与数据库沟通的语言，而常见的数据库有：SQL server、Mysql、Oracle等。数据库基础知识参见：SQL必知必会–Ben Forta
-我们都知道动态网页离不来数据库的支持，在应用数据库的时候难免会产生一些信息安全的问题。
-SQL注入漏洞：通过特殊">
+    <meta name="description" content="上传漏洞Web应用程序通常会有文件上传漏洞，通过上传特殊的文件拿到服务器的webshell从而达到入侵目的。
+常见的一些web容器：IIS、Nginx、Apache、Tomcat等，上传漏洞经常结合容器的的解析漏洞进行配合使用，因此需要了解各个容器的解析特点。为了防止上传漏洞通常采用两种模式：
+一、">
     
     
     
@@ -70,15 +70,15 @@ SQL注入漏洞：通过特殊">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/27/SQL/" title="SQL" itemprop="url">SQL</a>
+      <a href="/2016/03/28/上传漏洞/" title="上传漏洞" itemprop="url">上传漏洞</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://pzlee.github.io" title="pzlee">pzlee</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-27T04:02:03.000Z" itemprop="datePublished">2016-03-27</time>
-    更新日期:<time datetime="2016-03-27T04:39:12.397Z" itemprop="dateModified">2016-03-27</time>
+    <time datetime="2016-03-28T14:09:35.000Z" itemprop="datePublished">2016-03-28</time>
+    更新日期:<time datetime="2016-03-28T14:40:21.874Z" itemprop="dateModified">2016-03-28</time>
     
   </p>
 </header>
@@ -87,47 +87,28 @@ SQL注入漏洞：通过特殊">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL——结构化查询语句"><span class="toc-number">1.</span> <span class="toc-text">SQL——结构化查询语句</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#上传漏洞"><span class="toc-number">1.</span> <span class="toc-text">上传漏洞</span></a></li></ol>
 		</div>
 		
-		<h1 id="SQL——结构化查询语句"><a href="#SQL——结构化查询语句" class="headerlink" title="SQL——结构化查询语句"></a>SQL——结构化查询语句</h1><p>SQL是一种专门用来与数据库沟通的语言，而常见的数据库有：SQL server、Mysql、Oracle等。<br>数据库基础知识参见：SQL必知必会–Ben Forta</p>
-<p>我们都知道动态网页离不来数据库的支持，在应用数据库的时候难免会产生一些信息安全的问题。</p>
-<p>SQL注入漏洞：通过特殊的SQL，去破解数据库。</p>
-<p>分类：</p>
+		<h1 id="上传漏洞"><a href="#上传漏洞" class="headerlink" title="上传漏洞"></a>上传漏洞</h1><p>Web应用程序通常会有文件上传漏洞，通过上传特殊的文件拿到服务器的webshell从而达到入侵目的。</p>
+<p>常见的一些web容器：IIS、Nginx、Apache、Tomcat等，上传漏洞经常结合容器的的解析漏洞进行配合使用，因此需要了解各个容器的解析特点。<br>为了防止上传漏洞通常采用两种模式：</p>
+<p>一、客户端验证（这个验证是极其不安全，可轻易绕过。）</p>
+<p>二、服务器端验证：白名单与黑名单、MIME、目录验证、截断上传攻击</p>
+<p>文本编辑器上传漏洞:</p>
+<p>常见编辑器：CKEditor、UEditor、kindeditor等，由于编辑器本身的一些漏洞导致使用该编辑器的网站都会受到其影响。</p>
+<p>漏洞形成的主要原因：</p>
 <ol>
-<li>数字型注入</li>
-<li>字符型注入</li>
-<li>(其他分类可归为上述两类)</li>
+<li>目录过滤不严</li>
+<li>文件未重命名</li>
 </ol>
-<p>利用方式：</p>
-<ol>
-<li>数据查询</li>
-<li>读写文件</li>
-<li>执行命令</li>
-</ol>
-<p>常见工具：</p>
-<ol>
-<li>SQLMap</li>
-<li>Havij</li>
-<li>Pangolin</li>
-<li>（还有其他的工具这里就不一一列举，一般SQL注入已工具为主，手工为副。）</li>
-</ol>
-<p>SQL防范：</p>
-<ol>
-<li>严格的数据类型</li>
-<li>特殊字符转义</li>
-<li>使用预编译语句</li>
-<li>框架技术</li>
-<li>存储过程</li>
-</ol>
-<p><em>今天简单地了解SQL注入漏洞的原理，后续会深入的理解和应用SQL注入漏洞。</em><br><em>如果有好的实战例子我会与大家进行分享，加油！</em></p>
+<p>tips:安全是一个整体！！！</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/SQL/">SQL</a>
+  <span></span> <a href="/tags/Web安全/">Web安全</a>
   </div>
 
 
@@ -140,7 +121,7 @@ SQL注入漏洞：通过特殊">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://pzlee.github.io/2016/03/27/SQL/" data-title="SQL | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://pzlee.github.io/2016/03/28/上传漏洞/" data-title="上传漏洞 | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -149,19 +130,11 @@ SQL注入漏洞：通过特殊">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/28/上传漏洞/" title="上传漏洞">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  上传漏洞</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/21/简介/"  title="简介">
+<a href="/2016/03/27/SQL/"  title="SQL">
  <strong>NEXT:</strong><br/> 
- <span>简介
+ <span>SQL
 </span>
 </a>
 </div>
@@ -180,7 +153,7 @@ SQL注入漏洞：通过特殊">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL——结构化查询语句"><span class="toc-number">1.</span> <span class="toc-text">SQL——结构化查询语句</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#上传漏洞"><span class="toc-number">1.</span> <span class="toc-text">上传漏洞</span></a></li></ol>
   </div>
 
 <div id="asidepart">
