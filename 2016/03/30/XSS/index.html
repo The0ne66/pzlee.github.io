@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>上传漏洞 | Lee&#39;s Blog</title>
+    <title>XSS | Lee&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pzlee">
     
-    <meta name="description" content="上传漏洞Web应用程序通常会有文件上传漏洞，通过上传特殊的文件拿到服务器的webshell从而达到入侵目的。
-常见的一些web容器：IIS、Nginx、Apache、Tomcat等，上传漏洞经常结合容器的的解析漏洞进行配合使用，因此需要了解各个容器的解析特点。为了防止上传漏洞通常采用两种模式：
-一、">
+    <meta name="description" content="XSS(Cross Site Scripting) 跨站脚本攻击基础知识：javascript、Actionscript、VBscript等客户端脚本语言
+XSS原理：在网页中嵌入客户端脚本恶意代码（输入点和输出点）
+XSS分类：反射型、存储型、DOM型
+XSS检测：手工（源代码审计）和自动检测（A">
     
     
     
@@ -70,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/28/上传漏洞/" title="上传漏洞" itemprop="url">上传漏洞</a>
+      <a href="/2016/03/30/XSS/" title="XSS" itemprop="url">XSS</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://pzlee.github.io" title="pzlee">pzlee</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-28T14:09:35.000Z" itemprop="datePublished">2016-03-28</time>
-    更新日期:<time datetime="2016-03-30T15:00:18.584Z" itemprop="dateModified">2016-03-30</time>
+    <time datetime="2016-03-30T14:13:33.000Z" itemprop="datePublished">2016-03-30</time>
+    更新日期:<time datetime="2016-03-30T14:58:54.895Z" itemprop="dateModified">2016-03-30</time>
     
   </p>
 </header>
@@ -87,28 +88,31 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#上传漏洞"><span class="toc-number">1.</span> <span class="toc-text">上传漏洞</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS-Cross-Site-Scripting-跨站脚本攻击"><span class="toc-number">1.</span> <span class="toc-text">XSS(Cross Site Scripting) 跨站脚本攻击</span></a></li></ol>
 		</div>
 		
-		<h1 id="上传漏洞"><a href="#上传漏洞" class="headerlink" title="上传漏洞"></a>上传漏洞</h1><p>Web应用程序通常会有文件上传漏洞，通过上传特殊的文件拿到服务器的webshell从而达到入侵目的。</p>
-<p>常见的一些web容器：IIS、Nginx、Apache、Tomcat等，上传漏洞经常结合容器的的解析漏洞进行配合使用，因此需要了解各个容器的解析特点。<br>为了防止上传漏洞通常采用两种模式：</p>
-<p>一、客户端验证（这个验证是极其不安全，可轻易绕过。）</p>
-<p>二、服务器端验证：白名单与黑名单、MIME、目录验证、截断上传攻击</p>
-<p>文本编辑器上传漏洞:</p>
-<p>常见编辑器：CKEditor、UEditor、kindeditor等，由于编辑器本身的一些漏洞导致使用该编辑器的网站都会受到其影响。</p>
-<p>漏洞形成的主要原因：</p>
+		<h2 id="XSS-Cross-Site-Scripting-跨站脚本攻击"><a href="#XSS-Cross-Site-Scripting-跨站脚本攻击" class="headerlink" title="XSS(Cross Site Scripting) 跨站脚本攻击"></a>XSS(Cross Site Scripting) 跨站脚本攻击</h2><p>基础知识：javascript、Actionscript、VBscript等客户端脚本语言</p>
+<p>XSS原理：在网页中嵌入客户端脚本恶意代码（输入点和输出点）</p>
+<p>XSS分类：反射型、存储型、DOM型</p>
+<p>XSS检测：手工（源代码审计）和自动检测（APPSCAN、AWVS、Burp Suite）</p>
+<p>XSS危害：2013owasp top 10排名第三</p>
 <ol>
-<li>目录过滤不严</li>
-<li>文件未重命名</li>
+<li>网络钓鱼，包括盗取各类用户</li>
+<li>窃取用户cookies</li>
+<li>劫持用户会话</li>
+<li>强制弹出广告页面、刷流量</li>
+<li>网页挂马</li>
+<li>XSS蠕虫</li>
+<li>还有其他的一些危害这里就不一一列举…</li>
 </ol>
-<p>tips:安全是一个整体！！！</p>
+<p><em>对于跨站脚本攻击漏洞，攻击手段多种多样防不胜防，掌握“输入和输出”是解决问题的根本所在！</em> </p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/上传漏洞/">上传漏洞</a>
+  <span></span> <a href="/tags/XSS/">XSS</a>
   </div>
 
 
@@ -121,7 +125,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://pzlee.github.io/2016/03/28/上传漏洞/" data-title="上传漏洞 | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://pzlee.github.io/2016/03/30/XSS/" data-title="XSS | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -130,19 +134,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/30/XSS/" title="XSS">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  XSS</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/27/SQL/"  title="SQL">
+<a href="/2016/03/28/上传漏洞/"  title="上传漏洞">
  <strong>NEXT:</strong><br/> 
- <span>SQL
+ <span>上传漏洞
 </span>
 </a>
 </div>
@@ -161,7 +157,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#上传漏洞"><span class="toc-number">1.</span> <span class="toc-text">上传漏洞</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS-Cross-Site-Scripting-跨站脚本攻击"><span class="toc-number">1.</span> <span class="toc-text">XSS(Cross Site Scripting) 跨站脚本攻击</span></a></li></ol>
   </div>
 
 <div id="asidepart">
