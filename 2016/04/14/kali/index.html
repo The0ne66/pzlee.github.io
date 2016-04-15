@@ -4,15 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>缓冲区溢出 | Lee&#39;s Blog</title>
+    <title>kali | Lee&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="pzlee">
     
-    <meta name="description" content="缓冲区溢出漏洞基础知识：汇编语言、计算机操作系统原理、C语言
-原理：通过往程序的缓冲区写超出其长度的内容，造成缓冲区的溢出，从而破坏程序的堆栈，使程序转而执行其它指令，以达到攻击的目的。
-危害：可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。
-太久没更新博客了，今天简单的认识了">
+    <meta name="description" content="kali2.0安装准备：kali2.0镜像，etx4分区，u盘，ultraiso，minitool分区助手现在开始：1.将镜像刻入U盘2.用U盘启动进入kali安装界面，注意分区的挂载（不使用网络镜像）3.安装完成后，更新源的配置
+安装中文输入法之后系统无法启动：这是因为那些更新源的汉化出现的问题导">
     
     
     
@@ -71,15 +69,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/10/缓冲区溢出/" title="缓冲区溢出" itemprop="url">缓冲区溢出</a>
+      <a href="/2016/04/14/kali/" title="kali" itemprop="url">kali</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://pzlee.github.io" title="pzlee">pzlee</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-04-10T14:52:06.000Z" itemprop="datePublished">2016-04-10</time>
-    更新日期:<time datetime="2016-04-10T15:11:04.662Z" itemprop="dateModified">2016-04-10</time>
+    <time datetime="2016-04-14T14:54:59.000Z" itemprop="datePublished">2016-04-14</time>
+    更新日期:<time datetime="2016-04-15T06:24:20.032Z" itemprop="dateModified">2016-04-15</time>
     
   </p>
 </header>
@@ -88,20 +86,18 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区溢出漏洞"><span class="toc-number">1.</span> <span class="toc-text">缓冲区溢出漏洞</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kali2-0安装"><span class="toc-number">1.</span> <span class="toc-text">kali2.0安装</span></a></li></ol>
 		</div>
 		
-		<h2 id="缓冲区溢出漏洞"><a href="#缓冲区溢出漏洞" class="headerlink" title="缓冲区溢出漏洞"></a>缓冲区溢出漏洞</h2><p>基础知识：汇编语言、计算机操作系统原理、C语言</p>
-<p>原理：通过往程序的缓冲区写超出其长度的内容，造成缓冲区的溢出，从而破坏程序的堆栈，使程序转而执行其它指令，以达到攻击的目的。</p>
-<p>危害：可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。</p>
-<p><em>太久没更新博客了，今天简单的认识了一下缓冲区溢出漏洞原理。记得有句话怎么收：你看到别人眼前的成功，能不知道其背后付出多少的汗水。路还很漫长，但是你不能让自己一直在原地踏步，你要对自己有负责不能让自己再这样地散漫下去了。这次的机会非常难得，你要加倍的努力把握好这次机遇，不能让他在你眼前溜走</em></p>
+		<h1 id="kali2-0安装"><a href="#kali2-0安装" class="headerlink" title="kali2.0安装"></a>kali2.0安装</h1><p>准备：kali2.0镜像，etx4分区，u盘，ultraiso，minitool分区助手<br>现在开始：<br>1.将镜像刻入U盘<br>2.用U盘启动进入kali安装界面，注意分区的挂载（不使用网络镜像）<br>3.安装完成后，更新源的配置</p>
+<p>安装中文输入法之后系统无法启动：<br>这是因为那些更新源的汉化出现的问题导致，更新后系统出现错误。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/系统漏洞/">系统漏洞</a>
+  <span></span> <a href="/tags/kali/">kali</a>
   </div>
 
 
@@ -109,7 +105,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://pzlee.github.io/2016/04/10/缓冲区溢出/" data-title="缓冲区溢出 | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://pzlee.github.io/2016/04/14/kali/" data-title="kali | Lee&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -118,19 +114,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/04/14/kali/" title="kali">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  kali</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/30/XSS/"  title="XSS">
+<a href="/2016/04/10/缓冲区溢出/"  title="缓冲区溢出">
  <strong>NEXT:</strong><br/> 
- <span>XSS
+ <span>缓冲区溢出
 </span>
 </a>
 </div>
@@ -149,7 +137,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区溢出漏洞"><span class="toc-number">1.</span> <span class="toc-text">缓冲区溢出漏洞</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kali2-0安装"><span class="toc-number">1.</span> <span class="toc-text">kali2.0安装</span></a></li></ol>
   </div>
 
 <div id="asidepart">
